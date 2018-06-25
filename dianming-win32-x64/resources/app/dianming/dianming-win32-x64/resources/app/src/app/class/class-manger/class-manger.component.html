@@ -1,0 +1,54 @@
+<div class="box" style="margin-top: 20px;">
+  <div class="box-header with-border">
+    <a class="btn btn-success btn-sm" [routerLink]="['../classk-creat']"><i class="fa fa-plus"></i>&nbsp;&nbsp;创建</a>
+
+    <div style="margin-top: 6px;" class="box-tools">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <input [formControl]="nameFilter" type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-bordered">
+      <tr >
+        <th style="width: 2%;">id</th>
+        <th style="width: 10%;">课程名</th>
+        <th style="width: 10%;">账号</th>
+        <th style="width: 7%;">日常比重</th>
+        <th style="width: 7%;">期末比重</th>
+        <th style="width: 7%;">旷课警戒数</th>
+        <th style="width: 7%;">课时节次</th>
+        <th style="width: 15%;">课程地点</th>
+        <th style="width: 10%;">课程周序</th>
+        <th style="width: 7%;">课程学时</th>
+        <th style="width: 8%;">班级布局</th>
+        <th style="text-align: center;">操作</th>
+      </tr>
+      <tr *ngFor="let c of classs;let i = index;"  >
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{ i + 1 }}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.courseName}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.ID}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.dailyWeight}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.finalWeight}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.picketLine}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.classSession}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.classLocation}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.classDate}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.classOrder}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">{{c.shape}}</td>
+        <td *ngIf=" i>=pageSize-pageData && i< pageSize">
+          <a class="btn btn-warning btn-xs" [routerLink]="['../classk-form',c.courseName]"><i class="fa fa-edit"></i>&nbsp;修改</a>
+          <a class="btn btn-danger btn-xs" (click)="delete(c.courseName)"><i class="fa fa-close"></i>&nbsp;删除</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <app-page [pageParams]="{pageSize:pageSize,totalNum:totalNum,curPage:pageSize/pageData,totalPage:totalPage,pageData:pageData}"
+            (changeCurPage)="getPageData($event)"></app-page>
+
+</div>
