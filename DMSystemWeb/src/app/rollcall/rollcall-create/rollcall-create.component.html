@@ -1,0 +1,59 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">用户信息</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课程名</label>
+
+        <div class="col-sm-5">
+          <input [(ngModel)]="rollcall.courseName" type="text" class="form-control" name="courseName" placeholder="请输入课程名">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">账号</label>
+
+        <div class="col-sm-6">
+          <input [(ngModel)]="rollcall.tid" type="text" class="form-control" name="tid" placeholder="请输入教师账号">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">签到日期</label>
+
+        <div class="col-sm-5">
+          <input [(ngModel)]="rollcall.date" type="text" class="form-control" name="date" placeholder="请输入日期">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">签到状态</label>
+        <div class="col-sm-3">
+          <select [(ngModel)]="rollcall.state" name="state" class="form-control select2" style="width: 100%;">
+            <option value="{{cs.callstate}}" *ngFor="let cs of cstate;" >{{cs.dname}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">位置</label>
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="rollcall.position" type="text" class="form-control" name="position" placeholder="请输入座位">
+        </div>
+      </div>
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button (click)="cancel()" type="submit" class="btn btn-default" style="width: 100px;float: right;">取消</button>
+      <button (click)="save()" type="submit" class="btn btn-info pull-right" style="width: 100px;margin-right: 20px;">保存</button>
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>

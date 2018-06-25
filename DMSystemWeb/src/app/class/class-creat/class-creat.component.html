@@ -1,0 +1,73 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">课程信息</h3>
+  </div>
+
+  <form class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课程名</label>
+
+        <div class="col-sm-5">
+          <input [(ngModel)]="classles.coursename" type="text" class="form-control" name="coursename" placeholder="请输入课程">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">账号</label>
+
+        <div class="col-sm-6">
+          <input [(ngModel)]="classles.ID" type="text" class="form-control" name="ID" placeholder="请输入教师账号">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课时节次</label>
+
+        <div class="col-sm-5">
+          <input [(ngModel)]="classles.classSession" type="text" class="form-control" name="classSession" placeholder="请输入课时节次">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课程地点</label>
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="classles.classLocation" type="text" class="form-control" name="classLocation" placeholder="请输入课程地点">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课时周序</label>
+        <div class="col-sm-3">
+          <select [(ngModel)]="classles.classDate" name="classDate" class="form-control select2" style="width: 100%;">
+            <option value="{{da.classDate}}" *ngFor="let da of cdate;" >{{da.dname}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课程学时</label>
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="classles.classOrder" type="text" class="form-control" name="classOrder" placeholder="请输入课程学时">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">班级布局</label>
+
+        <div class="col-sm-3">
+          <input [(ngModel)]="classles.shape" type="text" class="form-control" name="shape" placeholder="请输入班级布局">
+        </div>
+      </div>
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button (click)="cancel()" type="submit" class="btn btn-default" style="width: 100px;float: right;">取消</button>
+      <button (click)="save()" type="submit" class="btn btn-info pull-right" style="width: 100px;margin-right: 20px;">保存</button>
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>

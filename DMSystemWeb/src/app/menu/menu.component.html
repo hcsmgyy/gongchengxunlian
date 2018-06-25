@@ -1,0 +1,57 @@
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>Alexander</p>
+        <!-- Status -->
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+
+    <!-- search form (Optional) -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+      </div>
+    </form>
+    <!-- /.search form -->
+
+    <!-- Sidebar Menu -->
+    <ul id = "aaa" class="sidebar-menu" data-widget="tree">
+      <li class="header">HEADER</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li><a href="javascript:;" [routerLink]="['./user']"><i class="fa fa-address-book-o"></i> <span>人员信息</span></a></li>
+      <li><a href="javascript:;" [routerLink]="['./classk']"><i class="fa fa-book"></i> <span>课程信息</span></a></li>
+      <li><a href="javascript:;" [routerLink]="['./rollcall']"><i class="fa fa-child"></i> <span>点名信息</span></a></li>
+      <li><a href="javascript:;" [routerLink]="['./question']"><i class="fa fa-question"></i> <span>提问信息</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-plus"></i> <span>数据字典</span>
+          <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="javascript:;" [routerLink]="['./role']">角色字典</a></li>
+          <li><a href="javascript:;" [routerLink]="['./major']">专业字典</a></li>
+          <li><a href="javascript:;" [routerLink]="['./sign']">签到状态字典</a></li>
+          <li><a href="javascript:;" [routerLink]="['./lesson']">课时字典</a></li>
+        </ul>
+      </li>
+      <li><a href="javascript:;" [routerLink]="['./about']"><i class="fa fa-exclamation-circle"></i> <span>关于</span></a></li>
+      <li><a href="javascript:;" [routerLink]="['./login']"><i class="fa fa-sign-out"></i> <span>退出</span></a></li>
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

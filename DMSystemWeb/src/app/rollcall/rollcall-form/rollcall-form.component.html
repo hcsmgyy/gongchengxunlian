@@ -1,0 +1,63 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">签到信息</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form [formGroup]="formModel" class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">id</label>
+
+        <div class="col-sm-6">
+          <input [(ngModel)]="cid" formControlName="autoid" type="text" class="form-control" id="autoid" placeholder="请输入学号">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">课程名</label>
+
+        <div class="col-sm-6">
+          <input formControlName="coursename" type="text" class="form-control" id="coursename" placeholder="请输入姓名">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">账号</label>
+
+        <div class="col-sm-5">
+          <input formControlName="ID" type="text" class="form-control" id="ID" placeholder="请输入密码">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">签到日期</label>
+
+        <div class="col-sm-4">
+          <input formControlName="calldate" type="text" class="form-control" id="calldate" placeholder="请输入班级">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">签到状态</label>
+        <div class="col-sm-3">
+          <input formControlName="callstate" type="text" class="form-control" id="callstate" placeholder="请输入专业">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">位置</label>
+        <div class="col-sm-3">
+          <input formControlName="callposition" type="text" class="form-control" id="callposition" placeholder="请输入角色">
+        </div>
+      </div>
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <button (click)="cancel()" type="submit" class="btn btn-default" style="width: 100px;float: right;">取消</button>
+      <button (click)="save()" type="submit" class="btn btn-info pull-right" style="width: 100px;margin-right: 20px;">保存</button>
+    </div>
+    <!-- /.box-footer -->
+  </form>
+</div>
